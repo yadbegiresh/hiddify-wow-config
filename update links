@@ -1,5 +1,36 @@
-warp://engage.cloudflareclient.com:2408/?ifp=5-10
-warp://162.159.192.161:2506/?ifp=5-10
-warp://188.114.99.246:1070/?ifp=5-10
-warp://188.114.96.212:1070/?ifp=5-10
-warp://162.159.193.0:2506/?ifp=5-10
+{
+  "outbounds": 
+  [
+    {
+      "type": "wireguard",
+      "tag": "Warp-IR",
+      "local_address": [
+        "172.16.0.2/32",
+        "2606:4700:110:8a85:94d1:10f:a1a8:4eb1/128"
+      ],
+      "private_key": "IEq4K7Lj8sedXYrL/mkkDHHk+OYdC9mGXNzomn0c0Eo=",
+      "server": "188.114.97.30",
+      "server_port": 939,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": [ 71, 190, 25 ],
+      "mtu": 1280,
+      "fake_packets": "5-10"
+    },
+    {
+      "type": "wireguard",
+      "tag": "Warp-Main",
+      "detour": "Warp-IR",
+      "local_address": [
+        "172.16.0.2/32",
+        "2606:4700:110:8600:b532:8a4a:8781:5be5/128"
+      ],
+      "private_key": "8FeX7T5GpcfR/FfbKmPWxMuD3k88hrurKLFzgZFUzmU=",
+      "server": "188.114.97.21",
+      "server_port": 1010,
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": [ 246, 48, 212 ],
+      "mtu": 1280,
+      "fake_packets": "5-10"
+    }
+  ]
+}
